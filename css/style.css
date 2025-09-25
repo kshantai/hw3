@@ -25,6 +25,9 @@ links in the navigation are in the hover or focus state.*/
      transition: top 1s ease ease-out;
 }
 
+p, h2, ul{
+  color: #000;
+}
 
 .skip a:focus {
      top: 25px;
@@ -55,7 +58,7 @@ links in the navigation are in the hover or focus state.*/
 
 .container > div:first-child {
      background-repeat: no-repeat;
-    background-image: url("images/header.jpg");
+     background-image: url("../images/header.jpg"); /* updated path */
      background-size: cover;
      background-position: center;
      position: relative;
@@ -63,6 +66,7 @@ links in the navigation are in the hover or focus state.*/
      grid-row: 1;
      min-height: 400px;
 }
+
 
 /*Write selector/rule property to add the background image to the first div in the grid and place it in the grid. */
 
