@@ -1,0 +1,189 @@
+/*Your Code Here*/
+
+nav a:hover, nav a:focus {
+     border:  2px dotted purple;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover; /* crop but maintain aspect ratio */
+  display: block; /* remove inline spacing */
+}
+
+/*Write selector/rule property to add your border when
+links in the navigation are in the hover or focus state.*/
+
+
+.skip a {
+     position: absolute;
+     top: -65px;
+     left: 0;
+     background-color: white;
+     padding: 6px;
+     z-index: 1;
+     transition: top 1s ease ease-out;
+}
+
+
+.skip a:focus {
+     top: 25px;
+}
+/*Write selector/rule property to position the skip class element when it is in focus*/
+
+:focus:not(nav a) {
+     border: 5px dashed green;
+}
+/*Write selector/rule property to style all elements when in focus*/
+
+
+
+.container {
+     display: grid;
+     grid-template-columns: repeat(5, 1fr);
+     gap: 13px;
+}
+/*Write selector/rule property to style the container */
+
+
+.container > div {
+     min-height: 100px;
+     border: 2px solid black;
+     background-color: lightgray;
+     padding: 10px;
+}
+
+.container > div:first-child {
+     background-repeat: no-repeat;
+    background-image: url("images/header.jpg");
+     background-size: cover;
+     background-position: center;
+     position: relative;
+     grid-column: 1 / -1;
+     grid-row: 1;
+     min-height: 400px;
+}
+
+/*Write selector/rule property to add the background image to the first div in the grid and place it in the grid. */
+
+
+/* Image containers styled to be base layer */
+.accounts-image,
+.onlinebanking-image,
+.security-image,
+.loans-image,
+.contact-image {
+  grid-column: 1 / -1;
+  max-height: 600px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 0;
+}
+
+/* Target the img inside each container for proper fitting */
+.accounts-image img,
+.onlinebanking-image img,
+.security-image img,
+.loans-image img,
+.contact-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Individual rows */
+.accounts-image { grid-row: 2; }
+.onlinebanking-image { grid-row: 3; }
+.security-image { grid-row: 4; }
+.loans-image { grid-row: 5; }
+.contact-image { grid-row: 6; }
+
+/* Text containers styled to appear above images */
+.accounts,
+.onlinebanking,
+.security,
+.loans,
+.contact {
+  grid-column: 2 / span 3;
+  position: relative;  /* Needed for z-index to apply */
+  z-index: 1;          /* Higher than image containers */
+  display: grid;
+  place-items: center;
+  color: white;        /* Ensure contrast over image */
+}
+
+.accounts { grid-row: 2; }
+.onlinebanking { grid-row: 3; }
+.security { grid-row: 4; }
+.loans { grid-row: 5; }
+.contact { grid-row: 6; }
+
+/*This will be a lot of rules.... but be strategic and combine selectors*/
+
+
+ .text-block {
+     display: grid;
+     place-items: center;
+     text-align: center;
+ }
+ 
+ .text-block ul {
+     text-align: left;
+ }
+ 
+ /* Step 8: Write the selector/rule property to style the .text-block class. */
+
+
+@media (min-width: 825px) {
+  nav {
+    text-align: right;
+    padding: 35px 0;
+  }
+  .text-block {
+    max-height: 235px;
+    overflow-y: auto;
+  }
+  .container {
+    grid-template-columns: repeat(7, 1fr);
+  }
+
+  .accounts,
+  .security,
+  .contact {
+    grid-column: 4 / span 3;
+  }
+
+  .onlinebanking,
+  .loans {
+    grid-column: 1 / span 3;
+  }
+
+  .accounts-image,
+  .security-image,
+  .contact-image {
+    grid-column: 1 / span 5;
+  }
+
+  .onlinebanking-image,
+  .loans-image {
+    grid-column: 3 / span 5;
+  }
+}
+
+ /* Add your media query here */
+
+
+  /* Step 10: Write the selector/rule property to style the nav element */
+
+ 
+  /* Step 11: Write the selector/rule property to update the .container class */
+
+
+  /* Steps 12 - 15: Update the grid-column property of the grid's children (where-needed)*/
+
+
+
+ /* Step 16:Write the selector/rule property to update the .text-block class */
+
